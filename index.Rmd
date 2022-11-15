@@ -10,7 +10,7 @@ favicon: CH_circle.ico
 
 # Abstract {-}
 
-The Clearinghouse for Financing Development Data is a dedicated platform for aid providers and 
+The [Clearinghouse for Financing Development Data](https://smartdatafinance.org/) is a dedicated platform for aid providers and 
 recipients to align their priorities, optimise their decision-making and demonstrate a stronger 
 case for data and statistics. To reach this goal, the platform prioritises user-focused, transparent 
 and accessible information about aid flows, partners, projects and results, which build on timely, 
