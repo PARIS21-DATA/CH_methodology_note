@@ -1,0 +1,69 @@
+# Key Projects, and Areas for Collaboration 
+
+This section provides a comparison of Norway’s flagship projects with similar donor activities in that project’s country. This information provides insight for the development of Norway’s future data strategy as well as possible coordination and collaboration on existing and future statistical activities. 
+
+## Norway’s Key Projects and Complementary Activities by Other Donors
+
+It is strongly recommended that the program managers of the following projects to coordinate with other donors, who are also funding large amount to same countries with similar sectoral focus.  
+
+
+``` {r significant-overlaps, echo = FALSE, message = F}
+source("code/00. boot.R")
+conflicted::conflict_prefer("group_rows", "kableExtra", "dplyr")
+conflicted::conflict_prefer("filter","dplyr")
+options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = T)
+
+# df_overlap_final <- read_rds("data/intermediate/80.2 temp norway overlap.rds")
+df_overlap_final_long <- read_rds("Data/intermediate/80.3 temp Norway overlaps long.rds")
+df_overlap_final_long_print <- read_rds("Data/intermediate/80.3 temp Norway overlaps long print.rds")
+vec_norway_project <- read_rds("data/intermediate/80.3 temp Norway overlaps vec Norway rows.rds")
+names(df_overlap_final_long_print) = gsub("[_]", " ", names(df_overlap_final_long_print))
+
+kbl(df_overlap_final_long_print, align = "c",  
+    caption = "Overlapping projects") %>%
+  kable_paper("hover"
+              , full_width = F
+              # , font = "Cambria"
+              ) %>%
+  kable_styling(fixed_thead = T) %>%
+  # column_spec(1, bold = T)   %>%
+  column_spec(1:7, color = "black",
+              background = spec_color(as.numeric(as.factor(df_overlap_final_long$norway_project_number)), end = 0.5, alpha = 0.5)) %>%
+  row_spec(vec_norway_project,
+           bold = T,
+           #italic = T, underline = T,
+           color = "white") %>%
+  collapse_rows(columns = 1, valign = "top")%>%
+  # kable_material(c("striped", "hover")) %>% 
+  scroll_box(width = "100%", box_css = "border: 0px;"
+             , height = "600px") 
+
+
+```
+
+
+## Key Projects by Donors in Norway’s Top Ten Recipient Countries 
+
+In the ten countries which receive significant amount of support from Norway, programme managers should also consider other large programmes on data and statistics are listed below:
+
+``` {r projectlist, echo = FALSE, message = F}
+df_project_list <- read_rds("data/intermediate/80.4 project list.rds")
+df_project_list %>%
+  select(-`Long Description`) %>% 
+  filter(`USD commitment` > 100000, 
+         `Project title` != "") %>% 
+  relocate(Gender,.after = last_col()) %>% 
+  kbl(
+    # df_project_list, 
+    # col.names = gsub("[_]", " ", names(df_coordination_matrix)), 
+    # booktabs = TRUE,
+    caption = "Other large statistical projects in the countries where Norway is also active", 
+    align = "c") %>% 
+  kable_paper("hover", full_width  = F) %>% 
+  kable_styling(fixed_thead = T
+  )%>%
+  scroll_box(width = "100%", box_css = "border: 0px;", height = "600px")
+
+```
+

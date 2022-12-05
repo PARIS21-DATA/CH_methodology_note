@@ -1,0 +1,114 @@
+# An Overview of Norway: Top Recipients, Active Partners and Aid Orphans
+
+This section provides an overview of Norway’s statistical activities including top ten country recipients alongside the active donors in those countries, and aid orphans with significant funding gap as well as funding opportunities for data and statistical development. 
+
+``` {r map, echo = F, message = F, fig.cap = "Country-specific support for data and statistics by Norway (2018-2022)"}
+
+source("code/00. boot.R")
+conflicted::conflict_prefer("group_rows", "kableExtra", "dplyr")
+conflicted::conflict_prefer("filter","dplyr")
+options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = T)
+
+df_map <- read_rds("Data/intermediate/80.3 temp Norway map.rds")
+hcmap(
+  map = "custom/world-highres3", # high resolution world map
+  data = df_map, # name of dataset
+  joinBy = "iso-a3",
+  value = "disbursement",
+  name = "Disbursements in 2018-2020 (USD)",
+  # showInLegend = T, # hide legend
+  # nullColor = "#DADADA",
+  download_map_data = F
+) %>%
+  hc_mapNavigation(enabled = FALSE) %>% 
+  hc_exporting(enabled = TRUE)
+
+```
+
+## Top Recipients of Norway's Statistical Support
+
+In the last 3 years, 10 countries received more than $ 300K from Norway for data and statistics. Norway is also among the top six donors in all of them. Norway should consider to collaborate with other top 5 donors in these countries. 
+
+``` {r other-donors, echo = FALSE, message = F}
+
+# source("code/01. Norway_factsheet.R", echo = F, print.eval = F)
+df_coordination_matrix <- read_rds("Data/intermediate/80.5 coordination matrix.rds")
+
+df_coordination_matrix %>% 
+  rename(Recipient = Recipient_Country, 
+         `Disbursement (USD thousand)` = Disbursements_by_Norway,
+         Ranking = Norway_ranking ) %>% 
+  kbl(align = "c", 
+      # df_coordination_matrix, 
+      # col.names = gsub("[_]", " ", names(df_coordination_matrix)), 
+      # booktabs = TRUE,
+      caption = "Other top donors in countries received over $300K disbursements from Norway in 2018-2020"
+  )  %>%  
+  kable_paper("hover"
+              , full_width = F
+              # , font = "Cambria"
+  )  %>% 
+  kable_styling(fixed_thead = T) %>%
+  add_header_above(c(" ", "Norway" = 2, "Top 5 donors and their relevant disbursements v. Norway" = 5))%>%
+  column_spec(c(1,3), border_right = T ) %>%
+  scroll_box(width = "100%", box_css = "border: 0px;"
+             , height = "600px") 
+
+
+```
+
+
+Out of these top donors, the United States, United Kingdom, Sweden, and Canada are the most active bilateral donors in Norway's top then recipients. A few lessons learned from their statistical support include:
+
+* **United State:** The U.S is one of top ten donors of statistics from 2018-2020. ([PRESS 2022](https://www.oecd-ilibrary.org/sites/c3cfb353-en/1/4/1/index.html?itemId=/content/publication/c3cfb353-en&_csp_=281dfa109194f953c9d10eb236ea1a44&itemIGO=oecd&itemContentType=book#figure-d1e1538)) Health and population data are a key focus of US support. Over the years, the U.S has learned several lessons regarding its investments in statistics including: the importance of leveraging local data systems; a focus on data access and use at the local and subnational levels is key; the need for appropriate data governance structures that can balance a country’s expansion traditional and innovation sources with the need for interoperability, privacy, and data ethics; and the importance of investing in gender-balanced data efforts both in terms of collection and production but also data literacy and skills among women. ([OECD, Data for Development Profile](https://www.oecd-ilibrary.org/sites/84baa8f3-en/1/3/2/14/index.html?itemId=/content/publication/84baa8f3-en&_csp_=e37a72fa9d323403b8feae4f28b72657&itemIGO=oecd&itemContentType=book)) 
+
+* **Canada:** Canada’s official development assistance (ODA) to data and statistics has a strong focus on gender equality and reproductive, maternal, newborn and child health, in line with its feminist international assistance policy. Their experience as a leading provider of statistical support over the years has generated several lessons. While smaller NSOs often have a great potential to scale and innovate, Canada found they may lack capacity to absorb the support due to human resources or technological constraints. Canada has also found that coordination among partners in the region is critical to leverage synergies and avoid duplication. Regional workshops that address common challenges can foster future collaboration and mutual assistance among participating countries, ensuring that support remains targeted and relevant to the region. Finally, regional programmes should encourage national statistical offices that excel in specific areas to develop further into regional centres of expertise, laying the foundations for future South-South co-operation. ([OECD, Data for Development Profile](https://www.oecd-ilibrary.org/sites/84baa8f3-en/1/3/2/14/index.html?itemId=/content/publication/84baa8f3-en&_csp_=e37a72fa9d323403b8feae4f28b72657&itemIGO=oecd&itemContentType=book)) 
+
+* **Sweden:** Similar to the U.S, the Sweden is one of the top ten donors of statistics. ([PRESS 2022](https://www.oecd-ilibrary.org/sites/c3cfb353-en/1/4/1/index.html?itemId=/content/publication/c3cfb353-en&_csp_=281dfa109194f953c9d10eb236ea1a44&itemIGO=oecd&itemContentType=book#figure-d1e1538)) Sweden’s approach has primarily focused on long-term co-operation as most Statistics Sweden’s programmes have a duration of around eight to ten years. Experiences have confirmed that ensuring that support is in line with the countries’ own priorities and strategies is crucial to maintaining sustainability and to achieving long-lasting development of a statistical system.  Evaluations have highlighted the need for broad-based support of the system as a whole and explain their shift support from capacity to produce statistics on issues of user engagement, planning processes and the dissemination of statistics. The placement of an on-site advisor to support the partner organisation is a fundamental aspect of Statistics Sweden’s support in statistical development and appears to be a key success factor for more sustainable outcomes. ([OECD, Data for Development Profile](https://www.oecd-ilibrary.org/sites/84baa8f3-en/1/3/2/14/index.html?itemId=/content/publication/84baa8f3-en&_csp_=e37a72fa9d323403b8feae4f28b72657&itemIGO=oecd&itemContentType=book)) 
+
+
+## Aid orphans in data and statistics
+
+A recipient of Norway's international aid is included in the "Aid Orphans" list below if it meets at least two of the following conditions:
+
+* Received over $50 million bilateral ODA from Norway but received almost no support to data and statistics in 2018-2020;
+
+* Eligible to borrow from the International Development Association (IDA) of the World Bank;
+
+* Total funding to data received is less than 0.3% of total ODA received in 2018-2020 (global average of funding to data is 0.34% while the target to close the funding gap is 0.7% of ODA);
+
+Based on these conditions, 15 countries are identified as potential "Aid Orphans" for Norway's international co-operation. In the next few years, Norway should consider allocate some resources for data projects to to these countries, especially the ones that meets all conditions above. 
+
+``` {r aidorphans, echo = F, message = F, fig.cap = "Norway priority countries that receive almost no funding in data and statistics"}
+
+df_norway_orphans <- read_rds("data/intermediate/81 orphans.rds")
+df_norway_orphans <- df_norway_orphans %>% 
+  mutate(total_oda = round(total_oda/1000000)
+         , fs = ifelse(fs==1, "✔", "")
+         , ida = ifelse(ida==1, "✔", "")
+         , datashare = round(datashare, 2)
+         # , datashare = paste0(datashare, "%")
+         # ,total_data_other_donors = round(total_data_other_donors/1000000)
+  )
+# df_norway_orphans$datashare <- color_tile("white", "orange")(df_norway_orphans$datashare)
+
+
+df_norway_orphans$datashare <- cell_spec(df_norway_orphans$datashare, color = ifelse(df_norway_orphans$datashare < 0.3, "red", "blue"))
+
+
+df_norway_orphans %>% 
+  select(Recipient = recipientname, 
+         `ODA from Norway (USD million)` = total_oda, 
+         `% of ODA to data (from other donors)` = datashare, 
+         `IDA recipient` = ida, 
+         `Fragile states` = fs )%>% 
+  kbl(escape = F
+      , caption = "Aid orphans in data and statistics") %>% 
+  kable_paper("hover"
+              , full_width = F
+              # , font = "Cambria"
+  )
+  
+
+```

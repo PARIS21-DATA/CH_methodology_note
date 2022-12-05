@@ -1,0 +1,6 @@
+# The Global Landscape of Financing for Statistics
+
+Funding for data and statistics fell by nearly 16% in 2020, a record-breaking decline in the Sustainable Development Goal (SDG) era. The COVID-19 pandemic has constrained operations of the international community, particularly development partners. However, even prior to the pandemic, funding for data and statistics amounted to just half of the funding required to produce sufficient data to meet the SDGs. Today, at the halfway point of the 2030 Agenda, fewer than half of low and lower middle-income countries are able to produce data on even a third of the SDG indicators.
+
+Read [The PARIS21 Partner Report on Support to Statistics](https://www.oecd-ilibrary.org/development/the-paris21-partner-report-on-support-to-statistics-2022_c3cfb353-en) for the latest funding figures on statistics.
+

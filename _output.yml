@@ -10,11 +10,10 @@ bookdown::gitbook:
       collapse: subsection
       scroll_highlight: true
       before: |
-        <li class="toc-logo"><a href="./"><img src="CH_logo_webite_extracted.png"></a></li>
-        <li><a href="./">Methodology note</a></li>
+        <li class="toc-logo"><a href="https://smartdatafinance.org/"><img src="CH_logo_webite_extracted.png"></a></li>
       after: |
-        <li><a href="https\://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/PARIS21-DATA/CH_methodology_note/edit/master/%s
+        <li><a href="https://smartdatafinance.org/" target="blank">Created by the Clearinghouse</a></li>
+    edit: https://github.com/PARIS21-DATA/Norway_factsheet/edit/master/%s
     info: no
     fontsettings:
       size: 2

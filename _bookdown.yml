@@ -1,8 +1,9 @@
 book_filename: "bookdownproj"
 output_dir: docs
+# new_session: true
 delete_merged_file: true
 edit: null
-view: https://github.com/PARIS21-DATA/CH_methodology_note/blob/master/%s
+view: https://github.com/PARIS21-DATA/Norway_factsheet/blob/master/%s
 language:
   ui:
     chapter_name: ""

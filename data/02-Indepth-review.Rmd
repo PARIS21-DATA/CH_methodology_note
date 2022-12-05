@@ -1,0 +1,50 @@
+# Aid orphans：Filling the funding gap for statistics in countries who receive insufficient funding
+
+Orphans of aid are listed if a country meets at least two of the following conditions:
+
+* Received over $50 million bilateral ODA from Norway but received almost no support to data and statistics in 2018-2020;
+
+* Eligible to borrow from the International Development Association (IDA) of the World Bank;
+
+* Total funding to data received is less than 0.3% of total ODA received in 2018-2020 (global average of funding to data is 0.34% while the target to close the funding gap is 0.7% of ODA);
+
+Based on these conditions, 15 countries are identified as potential "Aid Orphans" for Norway's international co-operation. In the next few years, Norway should consider allocate some resources for data projects to to these countries, especially the ones that meets all conditions above. 
+
+``` {r aidorphans, echo = F, message = F, fig.cap = "Norway priority countries that receive almost no funding in data and statistics"}
+
+source("code/00. boot.R")
+conflicted::conflict_prefer("group_rows", "kableExtra", "dplyr")
+conflicted::conflict_prefer("filter","dplyr")
+options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = T)
+library(formattable)
+df_norway_orphans <- read_rds("data/intermediate/81 orphans.rds")
+df_norway_orphans <- df_norway_orphans %>% 
+  mutate(total_oda = round(total_oda/1000000)
+         , fs = ifelse(fs==1, "✔", "")
+         , ida = ifelse(ida==1, "✔", "")
+         , datashare = round(datashare, 2)
+         # , datashare = paste0(datashare, "%")
+         # ,total_data_other_donors = round(total_data_other_donors/1000000)
+  )
+# df_norway_orphans$datashare <- color_tile("white", "orange")(df_norway_orphans$datashare)
+
+
+df_norway_orphans$datashare <- cell_spec(df_norway_orphans$datashare, color = ifelse(df_norway_orphans$datashare < 0.3, "red", "blue"))
+
+
+df_norway_orphans %>% 
+  select(Recipient = recipientname, 
+         `ODA from Norway (USD million)` = total_oda, 
+         `% of ODA to data (from other donors)` = datashare, 
+         `IDA recipient` = ida, 
+         `Fragile states` = fs )%>% 
+  kbl(escape = F
+      , caption = "Aid orphans in data and statistics") %>% 
+  kable_paper("hover"
+              , full_width = F
+              # , font = "Cambria"
+  )
+  
+
+```
