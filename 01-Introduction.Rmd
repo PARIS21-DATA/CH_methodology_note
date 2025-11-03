@@ -1,19 +1,11 @@
 # Introduction
 
-The Clearinghouse for Financing Development Data aims to provide a dedicated platform for aid 
-providers and recipients to align their priorities, optimise their decision-making and demonstrate 
-a stronger case for data and statistics. To reach this goal, the platform prioritises user-focused, 
-transparent and accessible information about partners, projects and results, which will build on 
-timely, accurate and in-depth data. 
+The Clearinghouse for Financing Development Data is an innovative platform designed to connect countries, donors, and development agencies in their efforts to strengthen data and statistical systems. By matching the supply and demand of financing for data and statistics, the Clearinghouse promotes transparency, accountability, and alignment while fostering better coordination among donors and partner countries. 
 
-This is the first platform offering a holistic overview over both, the financial support to statistics 
-and data as well as the financing needs in partner countries. For these reasons, the project team 
-sourced in project-level data on financing for development statistics from a wide range of data 
-stakeholders, including international organisations, development cooperation providers, statistical 
-offices and line ministries. The Clearinghouse project team received strategic guidance on the data 
-sourcing process from the Bern Network (see [Data Sourcing Strategic Note | April 2021](docs/Data_Sourcing_Strategy_CH_2021.pdf)). 
+Through its tools and services, the Clearinghouse enables donors to identify key data funding gaps in recipient countries, benchmark their own contributions, and explore opportunities for collaboration with other donors. Recipient countries, in turn, can use the platform to assess how much aid they receive for statistical capacity, identify remaining funding gaps, plan future investments, and advocate for additional support from governments and donors. Beyond these core users, researchers and civil society organisations can draw on the Clearinghouse’s resources to analyse broader trends in data financing and identify major donors and recipients in the field. 
+
+An initiative of the Bern Network on Financing Data for Development the Clearinghouse focuses particularly on low- and lower-middle-income countries as well as fragile states. It aims to improve the identification of needs, strengthen investment proposals, enhance coordination at the country level, and bridge domestic and external financial and technical support to bolster data systems in low-capacity settings.
 
 This technical note gives an overview over the implementation of the data sourcing process. It is 
-directed at development data experts interested in the collection and processing of financing data 
-on development data. Chapter \@ref(financing-dev-data) introduces the most important terminology on financing. Chapter 
-\@ref(about-the-data) illustrates the data collection and processing of the various data flows.
+directed at development data experts interested in the collection and processing of data on development financing. Chapter \@ref(financing-dev-data) introduces the most important terminology of financing data. Chapter 
+\@ref(about-the-data) illustrates the data collection and processing of the various data flows.   

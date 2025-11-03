@@ -1,6 +1,6 @@
 --- 
 title: "Clearinghouse Methodology Note"
-date: "Version 2.0 (updated on 1 November 2022)"
+date: "Version 3.0 (updated on 1 November 2025)"
 description: Clearinghouse Methodology Note
 site: bookdown::bookdown_site
 cover-image: CH_front_cover.png
@@ -10,16 +10,11 @@ favicon: CH_circle.ico
 
 # Abstract {-}
 
-The Clearinghouse for Financing Development Data is a dedicated platform for aid providers and 
-recipients to align their priorities, optimise their decision-making and demonstrate a stronger 
-case for data and statistics. To reach this goal, the platform prioritises user-focused, transparent 
-and accessible information about aid flows, partners, projects and results, which build on timely, 
-accurate and in-depth data.
+ 
 
-This document explains the different data featured in the platform as of 1st November 2022, and 
-details the collection, processing and analysis methodologies followed. It has been prepared by 
-the Clearinghouse project team, comprised of PARIS21 and Open Data Watch, on behalf of the 
-Secretariat of the Bern Network on Financing Data for Development.
+The Clearinghouse for Financing Development Data is a dedicated platform for aid providers and recipients to align their priorities, optimise their decision-making and demonstrate a stronger case for data and statistics. To reach this goal, the platform priorities user-focused, transparent and accessible information about aid flows, partners, projects and results, which build on timely, accurate and in-depth data.  
+
+This document explains the different data featured in the platform as of 1st November 2025, and details the collection, processing and analysis methodologies followed. It has been prepared by the Clearinghouse project team, comprised of PARIS21 and Open Data Watch, on behalf of the Secretariat of the Bern Network on Financing Data for Development. 
 
 <br />
 
