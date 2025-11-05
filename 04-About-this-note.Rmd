@@ -2,7 +2,7 @@
 
 ## What's new in this version?
 
-This version contains the methodology used to compile the 2025 update of the Clearinghouse platform and describes the updated data sources as of 1st of November 2025.
+This version contains the methodology used to compile the 2025 update of the Clearinghouse platform and describes the updated data sources as of November 2025.
 
 ## Acknowledgement
 

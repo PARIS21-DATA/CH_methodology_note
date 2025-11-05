@@ -1,0 +1,11 @@
+# References {-}
+
+PARIS21. (2025). *Partner Report on Support to Statistics 2025*. PARIS21. Retrieved from [https://www.paris21.org/knowledge-base/press-2025-paris21-partner-report-support-statistics-2025-maintaining-momentum](https://www.paris21.org/knowledge-base/press-2025-paris21-partner-report-support-statistics-2025-maintaining-momentum)
+
+United Nations. (2002). *Monterrey Consensus: Outcome document of the International Conference on Financing for Development (18–22 March 2002, Monterrey, Mexico)*. United Nations. Retrieved from [https://www.un.org/en/development/desa/population/migration/generalassembly/docs/globalcompact/A_CONF.198_11.pdf](https://www.un.org/en/development/desa/population/migration/generalassembly/docs/globalcompact/A_CONF.198_11.pdf)
+
+United Nations. (2015). *Addis Ababa Action Agenda of the Third International Conference on Financing for Development (13–16 July 2015, Addis Ababa, Ethiopia)*. United Nations. Retrieved from [https://digitallibrary.un.org/record/796962/?ln=en&v=pdf](https://digitallibrary.un.org/record/796962/?ln=en&v=pdf)
+
+United Nations Department of Economic and Social Affairs. (2025). *The Sustainable Development Goals Report 2025*. United Nations. Retrieved from [https://unstats.un.org/sdgs/report/2025/](https://unstats.un.org/sdgs/report/2025/)
+
+Vanderfeesten, M., Jaworek, R., & Keßler, L. (2022). *AI for mapping multi-lingual academic papers to the United Nations’ Sustainable Development Goals (SDGs)* (Version 1.0). Zenodo. [https://doi.org/10.5281/zenodo.6487606](https://doi.org/10.5281/zenodo.6487606)
